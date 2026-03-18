@@ -5,6 +5,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import uk.gov.hmcts.taskmanagement.exception.TaskNotFoundException;
 import uk.gov.hmcts.taskmanagement.models.Task;
 import uk.gov.hmcts.taskmanagement.models.dto.TaskRequestDTO;
 import uk.gov.hmcts.taskmanagement.models.dto.TaskResponseDTO;
@@ -69,7 +70,7 @@ public class TaskServiceTest {
   void getTaskByIdThrowExceptionTest() {
     when(taskRepository.findById(1L)).thenReturn(Optional.empty());
 
-    assertThrows(RuntimeException.class, () -> taskService.getTaskById(1L));
+    assertThrows(TaskNotFoundException.class, () -> taskService.getTaskById(1L));
   }
 
   @Test
@@ -84,7 +85,7 @@ public class TaskServiceTest {
   void deleteTaskThrowExceptionTest() {
     when(taskRepository.findById(1L)).thenReturn(Optional.empty());
 
-    assertThrows(RuntimeException.class, () -> taskService.deleteTask(1L));
+    assertThrows(TaskNotFoundException.class, () -> taskService.deleteTask(1L));
   }
 
   @Test
@@ -113,7 +114,7 @@ public class TaskServiceTest {
   void updateTaskThrowExceptionTest() {
     when(taskRepository.findById(1L)).thenReturn(Optional.empty());
 
-    assertThrows(RuntimeException.class, () -> taskService.updateTask(createTaskRequestDTO(), 1L));
+    assertThrows(TaskNotFoundException.class, () -> taskService.updateTask(createTaskRequestDTO(), 1L));
   }
 
   private Task createTaskEntity(Long id){

@@ -2,6 +2,7 @@ package uk.gov.hmcts.taskmanagement.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import uk.gov.hmcts.taskmanagement.exception.TaskNotFoundException;
 import uk.gov.hmcts.taskmanagement.models.Status;
 import uk.gov.hmcts.taskmanagement.models.Task;
 import uk.gov.hmcts.taskmanagement.models.dto.TaskRequestDTO;
@@ -52,7 +53,7 @@ public class TaskService {
 
   private Task checkIfTaskExists(Long id){
     return taskRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Task not found"));
+        .orElseThrow(() -> new TaskNotFoundException("Task not found"));
   }
 
   private Task mapToTaskEntity(TaskRequestDTO taskRequestDTO){
