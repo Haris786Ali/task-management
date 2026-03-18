@@ -1,5 +1,7 @@
 package uk.gov.hmcts.taskmanagement.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,26 +17,34 @@ import static org.springframework.http.HttpStatus.CREATED;
 @RequestMapping("/tasks")
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "Tasks", description = "Task management endpoints")
 public class TaskController {
 
   private final TaskService taskService;
 
   @GetMapping()
+  @Operation(summary = "Get all tasks", description = "Returns a list of all tasks")
   public ResponseEntity<List<TaskResponseDTO>> getAllTasks(){
     return ResponseEntity.ok(taskService.getAllTasks());
   }
 
   @GetMapping("/{id}")
+  @Operation(summary = "Get a singular task by ID",
+      description = "Returns one task based on the ID provided and if found, or code 404 if the task is not found")
   public ResponseEntity<TaskResponseDTO> getTasksById(@PathVariable Long id){
     return ResponseEntity.ok(taskService.getTaskById(id));
   }
 
   @PostMapping
+  @Operation(summary = "Creates new task",
+      description = "Returns the newly created object based on the provided taskRequestDTO")
   public ResponseEntity<TaskResponseDTO> createNewTask(@Valid @RequestBody TaskRequestDTO taskRequestDTO){
     return ResponseEntity.status(CREATED).body(taskService.createTask(taskRequestDTO));
   }
 
   @DeleteMapping("/{id}")
+  @Operation(summary = "Delete a task by ID",
+      description = "Returns No content for entity deletion, or code 404 if the task is not found")
   public ResponseEntity<Void> deleteTask(@PathVariable Long id){
     taskService.deleteTask(id);
     return ResponseEntity.noContent().build();
@@ -42,6 +52,7 @@ public class TaskController {
   }
 
   @PatchMapping("/{id}")
+  @Operation(summary = "Update a task", description = "Returns an updated task based on the updated taskRequesDTO 200, or code 404 if the task is not found")
   public ResponseEntity<TaskResponseDTO> updateTask(@PathVariable Long id, @Valid @RequestBody TaskRequestDTO taskRequestDTO){
     return ResponseEntity.ok(taskService.updateTask(taskRequestDTO, id));
   }
