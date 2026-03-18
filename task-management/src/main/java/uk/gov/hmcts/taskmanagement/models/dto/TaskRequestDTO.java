@@ -22,5 +22,7 @@ public class TaskRequestDTO {
 
   @NotNull
   private Status status;
+
+  @NotNull
   private LocalDateTime dueDate;
 }
