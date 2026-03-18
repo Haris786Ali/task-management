@@ -1,0 +1,3 @@
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Review case files', 'Review all pending case files for hearing', 'TODO', '2026-07-12 14:15:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Submit report', null, 'IN_PROGRESS', '2026-06-01 09:00:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Archive old cases', 'Move completed cases to archive', 'DONE', '2026-05-20 10:00:00');
