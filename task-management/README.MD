@@ -9,6 +9,7 @@ Users can create, view, update, and delete tasks through a simple API and fronte
 - Java 21
 - Spring Boot
 - H2 (in-memory database)
+- Flyway (database migrations)
 - Spring Data JPA
 - JUnit 5 & Mockito
 - Swagger Documentation
@@ -20,19 +21,31 @@ Users can create, view, update, and delete tasks through a simple API and fronte
 
 ### Steps
 1. Clone the repository
-   git clone https://github.com/Haris786Ali/task-management.git
+```bash
+git clone https://github.com/Haris786Ali/task-management.git
+```
 2. Navigate into the project
-   cd task-management
+```bash
+cd task-management
+```
 3. Run the application
-   mvn spring-boot:run
+```bash
+mvn spring-boot:run
+```
 
-App will start on http://localhost:8081
+App will start on `http://localhost:8081`
+
+## Frontend
+
+Access the frontend at:
+`http://localhost:8081/index.html`
 
 ## API Documentation
 
 Swagger UI is available at:
-http://localhost:8081/swagger-ui.html
+`http://localhost:8081/swagger-ui.html`
 
 ## Running Tests
-
-mvn test will run the full suite of tests
+```bash
+mvn test
+```

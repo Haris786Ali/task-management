@@ -1,3 +1,10 @@
-INSERT INTO tasks (title, description, status, due_date) VALUES ('Review case files', 'Review all pending case files for hearing', 'TODO', '2026-07-12 14:15:00');
-INSERT INTO tasks (title, description, status, due_date) VALUES ('Submit report', null, 'IN_PROGRESS', '2026-06-01 09:00:00');
-INSERT INTO tasks (title, description, status, due_date) VALUES ('Archive old cases', 'Move completed cases to archive', 'DONE', '2026-05-20 10:00:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Review Homework', 'Review all homework and complete it', 'TODO', '2026-07-12 14:15:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Submit documents', null, 'IN_PROGRESS', '2026-06-01 09:00:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Shopping', 'Milk, Bread and eggs', 'DONE', '2026-05-20 10:00:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Book dentist appointment', null, 'TODO', '2026-08-03 09:00:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Fix leaking tap', 'Call plumber or fix yourself', 'IN_PROGRESS', '2026-07-22 11:00:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Renew car insurance', null, 'TODO', '2026-07-30 10:00:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Clean out garage', 'Sort boxes and donate old items', 'DONE', '2026-05-10 14:00:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Plan birthday party', 'Venue, food and guest list', 'IN_PROGRESS', '2026-07-18 09:30:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Return library books', null, 'DONE', '2026-04-28 16:00:00');
+INSERT INTO tasks (title, description, status, due_date) VALUES ('Finish online course', 'Complete final two modules', 'TODO', '2026-09-01 10:00:00');
